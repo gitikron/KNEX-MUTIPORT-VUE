@@ -1,0 +1,33 @@
+<template>
+  <div>
+    <v-btn @click="get()">หห</v-btn>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+export default {
+  name: "StockDarleneIndex",
+
+  data() {
+    return {
+    };
+  },
+  methods: {
+    async get() {
+      try {
+       const response= await axios.get('http://localhost:3000/user')
+       console.log({data:response.data})
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  },
+    mounted() {
+    this.get()
+  },
+};
+
+</script>
+
+<style lang="scss" scoped></style>
